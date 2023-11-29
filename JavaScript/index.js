@@ -6,12 +6,14 @@ let btn = document.querySelector('[rem]')
 
 btn.addEventListener('click', remove)
 
-function remove(){
+function remove() {
     let enteredArray = document.querySelector('[entries]').value.split(' ');
-    let newArray = [...new Set(enteredArray)];
-    console.log(newArray);
-    display.value = newArray.join('" "')
+    let noRepeat = [...new Set(enteredArray)];
+    let sortedArray = noRepeat.sort((a, b) => a - b); // Fix the typo here
+    console.log(sortedArray);
+    display.value = sortedArray.join(' '); // Fix the assignment here
 }
+
 
 
 
